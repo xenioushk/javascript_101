@@ -8,7 +8,7 @@ A dialy used javascript code repository
 
 If `isBlobUrl(url)` returns `true` then output class name will be `my-class-img is-loading`. Else, it outputs `my-class-img`
 
-```html
+```javascript
 <div className={`my-class-img ${ isBlobUrl(url) ? "is-loading" : "" }`} >
 ```
 
