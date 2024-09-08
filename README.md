@@ -30,6 +30,8 @@ helloWorld()
 
 ### Style 3
 
+This type of function declaration often use in react application.
+
 ```javascript
 // arrow function.
 
