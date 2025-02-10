@@ -9,7 +9,7 @@ A dialy used javascript code repository
 ```javascript
 // regular style.
 function helloWorld() {
-  console.log("hello world")
+  console.log('hello world')
 }
 
 // call the function
@@ -21,7 +21,7 @@ helloWorld()
 ```javascript
 // assigned to a constant
 const helloWorld = function () {
-  console.log("hello world")
+  console.log('hello world')
 }
 
 // call the function
@@ -36,7 +36,7 @@ This type of function declaration often use in react application.
 // arrow function.
 
 const helloworld3 = () => {
-  console.log("hello world")
+  console.log('hello world')
 }
 
 // call the function
@@ -48,7 +48,7 @@ helloWorld()
 **Example 1**
 
 ```javascript
-const myArray = ["JS", "CSS", "HTML5", "PHP", "JAVA"]
+const myArray = ['JS', 'CSS', 'HTML5', 'PHP', 'JAVA']
 
 myArray.map((value, index) => {
   console.log(value)
@@ -98,6 +98,22 @@ If the URL is true, then application will print `Do something here`.
 {
   url && <div>Do something here</div>
 }
+```
+
+## Puppeteer Project Used functions
+
+### Import a node package to JS file
+
+Install the package.
+
+```bash
+npm i puppeteer
+```
+
+Open the JS file (example.js) and add the following code to import puppeteer.
+
+```javascript
+const puppeteer = require('puppeteer')
 ```
 
 ## Acknowledgement:
