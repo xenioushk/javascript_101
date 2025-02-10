@@ -116,6 +116,66 @@ Open the JS file (example.js) and add the following code to import puppeteer.
 const puppeteer = require('puppeteer')
 ```
 
+### Better version of settimeout
+
+```javascript
+// This script will pause the application for 1 second
+await new Promise((resolve) => setTimeout(resolve, 1000))
+```
+
+## Export a JavaScript for as CJS module.
+
+Let create a file called common.js. Add the following lines of code into that file.
+
+```javascript
+// Define some constants
+const APP_NAME = 'My App'
+const VERSION = '1.0.0'
+const baseDomain = 'https://app.me/'
+const baseFolderName = 'app'
+const baseDir = `./${baseFolderName}` // Base directory for offline files (Folder name)
+const zipFileName = `${baseFolderName}.zip`
+const zipFileOutputDir = './' // root directory of the script.
+const logDir = `./log`
+
+const dynamicPageUrl = 'https://app.me/mahbub'
+
+// Define a common function
+function greet(name = '') {
+  return `Hi ${name}, Welcome to ${APP_NAME} v${VERSION}`
+}
+
+// Export constants and function
+module.exports = {
+  baseDomain,
+  baseDir,
+  baseFolderName,
+  zipFileName,
+  zipFileOutputDir,
+  dynamicPageUrl,
+  APP_NAME,
+  VERSION,
+  logDir,
+  greet,
+}
+```
+
+Open the JS file (example.js) and add the following code to import puppeteer.
+
+```javascript
+//Destructuring all the variables and methods
+const { baseDomain, baseDir, baseFolderName, zipFileName, logDir, greet } = require('common')
+//Use the method of exported file.
+
+const sayHello = greet('Mahbub')
+// Will print 'Hi Mahbub, Welcome to My App v1.0.0'
+console.log(sayHello)
+```
+
+## ESM VS CJS
+
+![ESM VS CJS](/previews/esm_vs_cjs.png)
+
 ## Acknowledgement:
 
 [https://bluewindlab.net](https://bluewindlab.net)
